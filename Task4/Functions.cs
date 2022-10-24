@@ -17,22 +17,43 @@ namespace Task4
         }
         public static string ReturningWithoutReg(string str)
         {
-            int startIndex = 0;
-            int begining = 0;
-            int ending = 0;
-            var sb = new StringBuilder();
-            while (str.IndexOf('<', startIndex) != -1)
+            char[] chars = str.ToCharArray();
+            int amountIndexs = 0;
+            for (int i = 0; i < chars.Length; i++)
             {
-                ending = str.IndexOf('<', startIndex);
-                sb.Append(str.Substring(begining, ending - begining));
-                sb.Append('_');
-                begining = str.IndexOf('>', startIndex) + 1;
-                startIndex = begining;
-
+                if (chars[i] == '<')
+                {
+                    amountIndexs++;
+                }
             }
-            sb.Append(str.Substring(begining, str.Length - begining));
-            string rezult2 = sb.ToString();
-            return rezult2;
+            int[] indexs = new int[amountIndexs];
+            int j = 0;
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (chars[i] == '<')
+                {
+                    indexs[j] = i;
+                    j++;
+                }
+            }
+            StringBuilder stringBuilder = new StringBuilder();
+            int firstSymbolIndex = 0;
+            int lastSymbolIndex = 0;
+            int countSymvols = 0;
+            str = str.Replace("<", "_");
+            for (int i = indexs.Length - 1; i >= 0; i--)
+            {
+                firstSymbolIndex = indexs[i];
+                lastSymbolIndex = str.LastIndexOf(">");
+                countSymvols = lastSymbolIndex - firstSymbolIndex;
+                if(lastSymbolIndex< firstSymbolIndex)
+                {
+                    return str;
+                }
+                str = str.Remove(firstSymbolIndex + 1, countSymvols);
+            }
+            return str;
+
         }
     }
 }
