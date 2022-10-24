@@ -12,7 +12,12 @@ namespace Task5
         {
             String text= @"2008 год наступит 01-01-2058 
                            и закончится 31-12-2098";
-            Functions.PrintingDates(text);
+            Regex regex=Functions.Dates(text);
+            foreach (Match match in regex.Matches(text))
+            {
+                Console.WriteLine($"Дата {match.Value} где день - {match.Groups["day"]}, месяц - {match.Groups["month"]}, год - {match.Groups["year"]}");
+            }
+
         }
     }
 }

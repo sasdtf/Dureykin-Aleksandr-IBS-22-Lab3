@@ -29,7 +29,7 @@ namespace Task4
                 begining = str.IndexOf('>', startIndex) + 1;
                 startIndex = begining;
 
-            };
+            }
             sb.Append(str.Substring(begining, str.Length - begining));
             string rezult2 = sb.ToString();
             return rezult2;
