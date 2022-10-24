@@ -12,7 +12,7 @@ namespace Task3
         {
             //Console.WriteLine("Введите адрес электронной почты");
            // string email = Console.ReadLine();
-            string email = "p_ivanov@mail.rol.ru";
+            string email = "p@mail.rol.ru";
             Console.WriteLine(Functions.CheckingEmailOrNo(email));
             Console.ReadKey();
 

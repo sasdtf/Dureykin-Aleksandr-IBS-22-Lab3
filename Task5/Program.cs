@@ -10,7 +10,7 @@ namespace Task5
     {
         static void Main(string[] args)
         {
-            String text= @"2008 год наступит 01-00-2058 
+            String text= @"2008 год наступит 01-01-2058 
                            и закончится 31-12-2098";
             Functions.PrintingDates(text);
         }

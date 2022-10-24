@@ -11,7 +11,7 @@ namespace Task3
     {
         public static bool CheckingEmailOrNo(string email)
         {
-            string pattern= @"^[a-z0-9](?:[a-z0-9\._\-]*[a-z0-9]|[a-z0-9])\@" + @"(?:(?:[a-z0-9][a-z0-9_\-]*[a-z0-9]|[a-z0-9])\.)+(?:[a-z]{2,6})$";
+            string pattern= @"^[a-z0-9](?:[a-z0-9\._\-]*[a-z0-9])?\@" + @"(?:(?:[a-z0-9][a-z0-9_\-]*[a-z0-9]|[a-z0-9])\.)+(?:[a-z]{2,6})$";
 
             return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
