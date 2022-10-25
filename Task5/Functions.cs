@@ -12,7 +12,7 @@ namespace Task5
         public static Regex Dates(string str)
         {
             string pattern = @"(?<day>[12][0-9]|[0][1-9]|[3][01])\-(?<month>[0][1-9]|[1][0-2])\-" +
-                @"(?<year>[0-9][0-9][0-9][0-9])\s?";
+                @"(?<year>[0-9][0-9][0-9][0-9])";
             Regex regex = new Regex(pattern);
             return regex;
         }

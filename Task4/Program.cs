@@ -10,7 +10,7 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            string text = "<b>Это</b> текст <i>с</i> <font color=”red”>HTML</font> кодами";
+            string text = "<b>Это</b> текст <i>с</i> <font color=”red”>HTML</font> ко>>дами";
             string rezult1=Functions.ReturningWithReg(text);
             Console.WriteLine(rezult1);
             string rezult2 = Functions.ReturningWithoutReg(text);
